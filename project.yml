@@ -1,29 +1,27 @@
 ---
 
-# Notes:
-# Sample project C code is not presently written to produce a release artifact.
-# As such, release build options are disabled.
-# This sample, therefore, only demonstrates running a collection of unit tests.
-
 :project:
   :use_exceptions: FALSE
   :use_test_preprocessor: TRUE
   :use_auxiliary_dependencies: TRUE
   :build_root: build
-#  :release_build: TRUE
+  :release_build: TRUE
   :test_file_prefix: test_
   :which_ceedling: vendor/ceedling
   :default_tasks:
     - test:all
 
-#:release_build:
-#  :output: MyApp.out
-#  :use_assembly: FALSE
-
 :environment:
+  - :mcu: atmega328p
+  - :f_cpu: 16000000UL
+  - :serial_port: /dev/tty
+  - :objcopy: avr-objcopy
 
 :extension:
-  :executable: .out
+  :executable: .bin
+
+:release_build:
+  :output: blinky
 
 :paths:
   :test:
@@ -61,12 +59,28 @@
     bool:     UINT8
 
 :gcov:
-    :html_report_type: basic
+  :html_report: true
+  :html_report_type: detailed
 
-#:tools:
-# Ceedling defaults to using gcc for compiling, linking, etc.
-# As [:tools] is blank, gcc will be used (so long as it's in your system path)
-# See documentation to configure a given toolchain for use
+:tools:
+  :release_compiler:
+    :executable: avr-gcc
+    :arguments:
+      - ${1}
+      - -DTARGET
+      - -DF_CPU=#{ENV['F_CPU']}
+      - -mmcu=#{ENV['MCU']}
+      - -Iinclude/
+      - -Wall
+      - -Os
+      - -c
+      - -o ${2}
+  :release_linker:
+    :executable: avr-gcc
+    :arguments:
+      - -mmcu=#{ENV['MCU']}
+      - ${1}
+      - -o ${2}.bin
 
 # LIBRARIES
 # These libraries are automatically injected into the build process. Those specified as
@@ -88,4 +102,5 @@
     - stdout_pretty_tests_report
     - module_generator
     - raw_output_report
+    - gcov
 ...
