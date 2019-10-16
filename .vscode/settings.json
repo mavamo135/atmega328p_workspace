@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "io.h": "c",
+        "iom328p.h": "c",
+        "delay.h": "c",
+        "gpio.h": "c",
+        "avr_mcu_section.h": "c",
+        "stdint.h": "c"
+    }
+}
