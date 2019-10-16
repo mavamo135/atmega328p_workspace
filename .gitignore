@@ -1,9 +1,5 @@
 # Ceedling build directory
-build/artifacts
-build/gcov
-builld/logs 
-build/temp
-build/test
+build/
 
 # Make release directory
 release/
