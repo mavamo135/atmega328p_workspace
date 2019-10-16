@@ -5,6 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/src",
+                "${workspaceFolder}/test/support",
+                "${workspaceFolder}/vendor/ceedling/vendor/cmock/src",
+                "${workspaceFolder}/vendor/ceedling/vendor/unity/src",
                 "/usr/local/Cellar/avr-gcc",
                 "/usr/local/Cellar/avr-gcc/8.2.0/avr/include"
             ],

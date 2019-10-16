@@ -2,7 +2,12 @@
 #define GPIO_H
 
 #include <stdint.h>
-#include <avr/io.h>
+
+#ifdef TEST
+    #include "stub_io.h"
+#else
+    #include <avr/io.h>
+#endif
 
 void gpio_set_mask(volatile uint8_t* port, uint8_t mask);
 void gpio_clear_mask(volatile uint8_t* port, uint8_t mask);

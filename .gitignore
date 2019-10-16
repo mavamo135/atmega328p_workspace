@@ -1,1 +1,12 @@
-build/
+# Ceedling build directory
+build/artifacts
+build/gcov
+builld/logs 
+build/temp
+build/test
+
+# Make release directory
+release/
+
+# VSCode stuff
+.vscode/ipch

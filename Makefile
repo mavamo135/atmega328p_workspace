@@ -4,8 +4,8 @@ MKDIR = mkdir -p
 .PHONY: clean test project
 
 PATH_SRC = src/
-PATH_BLD = build/
-PATH_OBJ = build/objs/
+PATH_BLD = release/
+PATH_OBJ = release/objs/
 BASENAME = project
 PROJECT_ELF = $(PATH_BLD)$(BASENAME).elf
 PROJECT_HEX = $(PATH_BLD)$(BASENAME).hex
