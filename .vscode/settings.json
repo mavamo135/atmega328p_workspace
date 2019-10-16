@@ -5,6 +5,7 @@
         "delay.h": "c",
         "gpio.h": "c",
         "avr_mcu_section.h": "c",
-        "stdint.h": "c"
+        "stdint.h": "c",
+        "unity.h": "c"
     }
 }

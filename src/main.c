@@ -5,8 +5,14 @@
 #define __AVR_ATmega328P__
 #endif
 
-#include <avr/io.h>
-#include <util/delay.h>
+#ifdef TEST
+    #include "stub_io.h"
+    #include "stub_delay.h"
+#else
+    #include <avr/io.h>
+    #include <util/delay.h>
+#endif
+
 #include "gpio.h"
 
 int main(void)
