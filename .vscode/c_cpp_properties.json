@@ -3,16 +3,12 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/src",
-                "${workspaceFolder}/test/support",
-                "${workspaceFolder}/vendor/ceedling/vendor/cmock/src",
-                "${workspaceFolder}/vendor/ceedling/vendor/unity/src",
-                "/usr/local/Cellar/avr-gcc",
-                "/usr/local/Cellar/avr-gcc/8.2.0/avr/include"
+                "${workspaceFolder}/**"
             ],
-            "defines": [],
-            "compilerPath": "/usr/bin/avr-gcc",
+            "defines": [
+                "__AVR_ATmega328P__"
+            ],
+            "compilerPath": "/usr/local/bin/avr-gcc",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64"
