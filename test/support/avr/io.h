@@ -96,8 +96,7 @@
 #ifndef _AVR_IO_H_
 #define _AVR_IO_H_
 
-// #include <avr/sfr_defs.h>
-#include "stub_sfr_defs.h"
+#include <avr/sfr_defs.h>
 // #if defined (__AVR_AT94K__)
 // #  include <avr/ioat94k.h>
 // #elif defined (__AVR_AT43USB320__)
@@ -219,8 +218,7 @@
 // #elif defined (__AVR_ATmega3250P__)
 // #  include <avr/iom3250.h>
 // #elif defined (__AVR_ATmega328P__) || defined (__AVR_ATmega328__)
-// #  include <avr/iom328p.h>
-#include "stub_iom328p.h"
+#include <iom328p.h>
 // #elif defined (__AVR_ATmega329__)
 // #  include <avr/iom329.h>
 // #elif defined (__AVR_ATmega329P__) || defined (__AVR_ATmega329PA__)
