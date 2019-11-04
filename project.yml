@@ -14,7 +14,7 @@
 :environment:
   - :mcu: atmega328p
   - :f_cpu: 16000000UL
-  - :serial_port: /dev/tty
+  - :serial_port: /dev/tty.usbserial-AI05GFTR
   - :objcopy: avr-objcopy
 
 :extension:

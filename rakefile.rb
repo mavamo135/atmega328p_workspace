@@ -27,14 +27,14 @@ namespace:target do
     desc "Program the microcontroller over the serial port"
     task :load=> [:hex, :serial_port] do
         hex_file = "#{PROJECT_BUILD_ROOT}/release/#{RELEASE_BUILD_OUTPUT}.hex"
-        cmd = "avrdude -v -p #{ENV['MCU']} -c avrisp2 -P #{ENV['SERIAL_PORT']} -B 8 -U flash:w:#{hex_file}"
+        cmd = "avrdude -v -p #{ENV['MCU']} -c arduino -P #{ENV['SERIAL_PORT']} -B 8 -U flash:w:#{hex_file}"
         puts "Loading to board..."
         sh cmd
     end
 
     desc "Make a backup hex image of the flash contents"
     task :backup, [:backup_name] => :serial_port do |t, args|
-        cmd = "avrdude -v -p #{ENV['MCU']} -c avrisp2 -P #{ENV['SERIAL_PORT']} -B 8 -U lash:r:#{args.backup_name}:i"
+        cmd = "avrdude -v -p #{ENV['MCU']} -c arduino -P #{ENV['SERIAL_PORT']} -B 8 -U flash:r:#{args.backup_name}:i"
         puts "Making backup..."
         sh cmd
     end

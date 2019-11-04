@@ -1,35 +1,36 @@
-#include "gpio.h"
+#include "main.h"
+#include "button.h"
+#include "led.h"
 
 #ifdef TEST
-    #include "stub_io.h"
-    #include "stub_delay.h"
+    #define FOREVER()   0
+    #define SLEEP(x)
 #else
-    #include <avr/io.h>
     #include <util/delay.h>
+    #define FOREVER()   1
+    #define SLEEP(x)    _delay_ms(x)
+    int main(void)
+    {
+        return AppMain();
+    }
 #endif
 
-int main(void)
+int AppMain(void)
 {
-    gpio_set_mask(&DDRB, 0x7F);
-    gpio_set_bit(&PORTB, PORTB7);
+    button_configure();
+    led_configure();
 
-    while (1)
+    do
     {
-        if ( gpio_read_bit(&PINB, PINB7) == 1 )
+        if ( button_is_pressed() )
         {
-            gpio_clear_bit(&PORTC, PORTC0);
-            gpio_set_mask(&PORTB, 0x7F);
-            _delay_ms(2000);
-            gpio_clear_mask(&PORTB, 0x7F);
-            _delay_ms(2000);
+            led_set();
         }
         else
         {
-            gpio_set_bit(&PORTC, PORTC0);
-            gpio_set_mask(&PORTB, 0x7F);
-            _delay_ms(500);
-            gpio_clear_mask(&PORTB, 0x7F);
-            _delay_ms(500);
+            led_clear();
         }
-    }
+    } while (FOREVER());
+
+    return 0;
 }
