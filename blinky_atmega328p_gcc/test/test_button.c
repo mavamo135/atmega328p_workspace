@@ -5,7 +5,7 @@
 
 void setUp(void)
 {
-    SW_DDR = 0x00;
+    SW_DDR  = 0x00;
     SW_PORT = 0x00;
     SW_PINR = 0x00;
 }

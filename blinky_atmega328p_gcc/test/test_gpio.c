@@ -5,7 +5,7 @@
 void setUp(void)
 {
     PORTB = 0x00;
-    DDRB = 0x00;
+    DDRB  = 0x00;
 }
 
 void tearDown(void)

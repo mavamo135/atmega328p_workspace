@@ -1,6 +1,6 @@
 /******************************************************************************
 * Title                 :   NXTIOT board configuration header file  
-* Filename              :   nxtiot_board.h
+* Filename              :   board.h
 * Author                :   Maximiliano Valencia
 * Origin Date           :   28/03/2019
 * Version               :   1.0.0

@@ -5,9 +5,9 @@
 void
 button_configure()
 {
-    // Configure pin PB7 as input
+    /* Configure PB7 as input */
     gpio_clear_bit(&SW_DDR, SW_PIN);
-    // Configure pin PB7 as pull-up
+    /* Configure pin PB7 as pull-up */
     gpio_set_bit(&SW_PORT, SW_PIN);
 }
 

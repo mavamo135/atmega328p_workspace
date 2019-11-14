@@ -3,11 +3,11 @@
 #include "led.h"
 
 #ifdef TEST
-    #define FOREVER()   0
+    #define LOOP
     #define SLEEP(x)
 #else
     #include <util/delay.h>
-    #define FOREVER()   1
+    #define LOOP        while(1)
     #define SLEEP(x)    _delay_ms(x)
     int main(void)
     {
@@ -20,7 +20,7 @@ int AppMain(void)
     button_configure();
     led_configure();
 
-    do
+    LOOP
     {
         if ( button_is_pressed() )
         {
@@ -30,7 +30,7 @@ int AppMain(void)
         {
             led_clear();
         }
-    } while (FOREVER());
+    }
 
     return 0;
 }

@@ -6,3 +6,5 @@ release/
 
 # VSCode stuff
 .vscode/ipch
+
+Makefile*
