@@ -9,10 +9,10 @@
 void setUp(void)
 {
     LED_PORT = 0x00;
-    LED_DDR = 0x00;
-    SW_PORT = 0x00;
-    SW_DDR = 0x00;
-    SW_PINR = 0x00;
+    LED_DDR  = 0x00;
+    SW_PORT  = 0x00;
+    SW_DDR   = 0x00;
+    SW_PINR  = 0x00;
 }
 
 void tearDown(void)

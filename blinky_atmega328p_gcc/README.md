@@ -1,4 +1,4 @@
-# blinky_atmega328p
+# blinky_atmega328p_gcc
 
 Blinky example project for the ATMEGA328P microcontroller with support for 
 unit testing with Ceedling. Ceedling is also used to build the release files

@@ -7,7 +7,7 @@
 void setUp(void)
 {
     LED_PORT = 0x00;
-    LED_DDR = 0x00;
+    LED_DDR  = 0x00;
 }
 
 void tearDown(void)
